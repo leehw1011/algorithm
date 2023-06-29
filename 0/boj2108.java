@@ -76,6 +76,36 @@ public class boj2108 {
 			mode = mode_list.get(0);
 		}
 
+		// // 최빈값
+        // int curr, next;
+        // mode = 0;
+        // int count = 0;
+        // int max_count = 0;
+        // ArrayList<Integer> mode_list = new ArrayList<>();
+        // if(n==1) {
+        //     mode = num[0];
+        // }
+        // else{
+        //     for(int i=0;i<n-1;i++){
+        //     curr = num[i];
+        //     next = num[i+1];
+        //     if(curr == next){ 
+        //         count++;
+        //         if(max_count<=count){
+        //             if(max_count!=count) {mode_list.clear();}
+        //             max_count = count;
+        //             mode = num[i];
+        //             mode_list.add(mode);
+        //         }
+        //     }
+        //     else{ count = 0; }
+        //     }
+
+        //     if(mode_list.size() > 1){
+        //         mode = mode_list.get(1);
+        //     }
+        // }
+
         // 범위
         range = num[n-1]-num[0];
         
