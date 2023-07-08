@@ -1,4 +1,5 @@
 // 2609 최대공약수와 최소공배수
+// 유클리드호제법
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;

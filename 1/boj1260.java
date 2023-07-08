@@ -1,4 +1,5 @@
 // 1260 DFS와 BFS
+// 알고리즘 풀 때는 전역변수 사용을 권장 -> 자동 초기화
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class boj1260 {
             a = Integer.parseInt(st.nextToken());
             b = Integer.parseInt(st.nextToken());
             edge[a][b] = 1;
-            edge[b][a] = 1;
+            edge[b][a] = 1;         // 인접행렬보다 인접 리스트를 사용하는게 시간이 덜 걸린다! / java에도 memset같은게 있나?
         }
 
         dfs(start);
