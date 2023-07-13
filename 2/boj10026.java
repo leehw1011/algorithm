@@ -68,30 +68,30 @@ public class boj10026 {
         queue.add(start);
         while(!queue.isEmpty()){
             curr = queue.poll();
-            nx = curr.x; ny = curr.y;
             for(int i=0;i<4;i++){
-                if(nx+dx[i] < 0 || ny+dy[i] < 0 || nx+dx[i] >= n || ny+dy[i] >= n){ continue; }
+                nx = curr.x + dx[i]; ny = curr.y + dy[i];
+                if(nx < 0 || ny < 0 || nx >= n || ny >= n){ continue; }
                 // 적록색약이 아닌 경우의 동작
                 if(rgb){
-                    if(map[nx+dx[i]][ny+dy[i]] == map[nx][ny] && count[nx+dx[i]][ny+dy[i]] == 0){ 
-                        count[nx+dx[i]][ny+dy[i]] = cnt;
-                        next = new A(nx+dx[i],ny+dy[i]);
+                    if(map[nx][ny] == map[curr.x][curr.y] && count[nx][ny] == 0){ 
+                        count[nx][ny] = cnt;
+                        next = new A(nx,ny);
                         queue.add(next);
                     }
                 }
                 // 적록색약인 경우의 동작
                 else{
-                    if(map[nx][ny] == 'B'){
-                        if(map[nx+dx[i]][ny+dy[i]] == 'B' && count[nx+dx[i]][ny+dy[i]] == 0){ 
-                        count[nx+dx[i]][ny+dy[i]] = cnt;
-                        next = new A(nx+dx[i],ny+dy[i]);
+                    if(map[curr.x][curr.y] == 'B'){
+                        if(map[nx][ny] == 'B' && count[nx][ny] == 0){ 
+                        count[nx][ny] = cnt;
+                        next = new A(nx,ny);
                         queue.add(next);
                         }
                     }
                     else{
-                        if(map[nx+dx[i]][ny+dy[i]] != 'B' && count[nx+dx[i]][ny+dy[i]] == 0){ 
-                        count[nx+dx[i]][ny+dy[i]] = cnt;
-                        next = new A(nx+dx[i],ny+dy[i]);
+                        if(map[nx][ny] != 'B' && count[nx][ny] == 0){ 
+                        count[nx][ny] = cnt;
+                        next = new A(nx,ny);
                         queue.add(next);
                         }
                     }

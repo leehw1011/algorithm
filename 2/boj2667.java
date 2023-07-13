@@ -68,13 +68,13 @@ public class boj2667 {
         while(!queue.isEmpty()){
             curr = queue.poll();
             cnt++;
-            nx = curr.x; ny = curr.y;
             for(int k=0;k<4;k++){
-                if(nx+dx[k]<1 || ny+dy[k]<1 || nx+dx[k]>n || ny+dy[k]>n) continue;
-                if(map[nx+dx[k]][ny+dy[k]]=='1' && !visit[nx+dx[k]][ny+dy[k]]){
-                    next = new Map(nx+dx[k], ny+dy[k]);
+                nx = curr.x + dx[k]; ny = curr.y+dy[k];
+                if(nx<1 || ny<1 || nx>n || ny>n) continue;
+                if(map[nx][ny]=='1' && !visit[nx][ny]){
+                    next = new Map(nx, ny);
                     queue.add(next);
-                    visit[nx+dx[k]][ny+dy[k]] = true;
+                    visit[nx][ny] = true;
                 }
             }
         }
