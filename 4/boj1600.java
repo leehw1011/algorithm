@@ -67,11 +67,13 @@ public class boj1600 {
             curr = queue.poll();
             
             if(curr.x == h && curr.y == w){     // 목적지 도착 시 종료
-                int min = Integer.MAX_VALUE;
-                for(int i=0;i<=k;i++){
-                    if(dist[h][w][i] < min && dist[h][w][i] != 0) min = dist[h][w][i];
-                }
-                ans = min - 1;
+                // 이렇게 최솟값을 찾아서 출력할 필요가 없다! 가장 먼저 도착하는게 최단거리를 보장
+                // int min = Integer.MAX_VALUE;
+                // for(int i=0;i<=k;i++){
+                //     if(dist[h][w][i] < min && dist[h][w][i] != 0) min = dist[h][w][i];
+                // }
+                // ans = min - 1;
+                ans = dist[h][w][curr.k]-1;
                 return;
             }
 
