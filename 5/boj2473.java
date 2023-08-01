@@ -4,7 +4,7 @@ import java.util.*;
 
 public class boj2473 {
     static int n, a, b, c;
-    static long sum, tmp,  ans1, ans2, ans3;
+    static long sum, ans1, ans2, ans3;
     static long min = Long.MAX_VALUE;
     static long[] num;
     public static void main(String args[]) throws IOException{
@@ -49,7 +49,6 @@ public class boj2473 {
             while(b<c){
                 sum = num[a] + num[b] + num[c];
                 if(Math.abs(sum) < min){
-                    tmp = sum;
                     min = Math.abs(sum);
                     ans1 = num[a]; ans2 = num[b]; ans3 = num[c];
                 }
@@ -64,7 +63,6 @@ public class boj2473 {
         }
 
         bw.write(String.valueOf(ans1) + " " + String.valueOf(ans2) + " " + String.valueOf(ans3));
-        bw.close();
         bw.close();
 
     }
