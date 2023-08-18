@@ -63,6 +63,7 @@ public class boj1753 {
         while(!pq.isEmpty()){
             Edge curr = pq.poll();  // 처음 : (1,0)
 
+            if(curr.weight > dist[curr.end]) continue;      // 코드가 이게 맞나? 우선순위큐에서 꺼내왔을때 현재 최소거리보다 값이 크면 볼 필요가 없다.
             for(Edge e : adj.get(curr.end-1)){    // 처음 : 1번 노드에서 갈 수 있는 애들이 불러와짐 (2,2), (3,3)
                 if(dist[curr.end] + e.weight < dist[e.end]){
                     dist[e.end] = dist[curr.end] + e.weight;
